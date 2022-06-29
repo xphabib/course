@@ -1,0 +1,20 @@
+<%= @course.title %>
+<br>
+<br>
+<% @course.course_sections.each do |sec| %>
+  <p><b><%= sec.name %></b></p>
+  <div>
+    <% sec.course_lessons.each do |l| %>
+      <p>
+        - <%= l.video_url %>
+        - <%= html_return(l.video_url) %>
+      </p>
+      <br>
+      <p>
+        - <%= l.title %>
+      </p>
+      <p>=================================</p>
+      <p>=================================</p>
+    <% end %>
+  </div>
+<% end %>
